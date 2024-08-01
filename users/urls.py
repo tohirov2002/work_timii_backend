@@ -6,7 +6,8 @@ from users.views import (
     ProfileUpdateView,
     password_change_view,
     password_reset_view,
-    LoginAPIView
+    LoginAPIView,
+    LogoutAPIView
 )
 
 router = routers.DefaultRouter()
@@ -17,4 +18,5 @@ urlpatterns = [
     path('password-change/', password_change_view, name="password-change"),
     path('password-reset/', password_reset_view, name="password-reset"),
     path('login/', LoginAPIView.as_view(), name='login'),
+    path('logout/', LogoutAPIView.as_view(), name='logout'),
 ] + router.urls
